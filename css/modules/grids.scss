@@ -1,0 +1,134 @@
+// Grid
+.grid {
+    display: grid;
+    list-style: none;
+}
+.grid__item {
+    display: block;
+    position: relative;
+}
+// Padding
+.p-05 { padding: 0.5rem }
+.p-1 { padding: 1rem }
+.p-2 { padding: 2rem }
+.p-3 { padding: 3rem }
+.pl-1 { padding-left: 1rem }
+.pl-2 { padding-left: 2rem }
+.pl-3 { padding-left: 3rem }
+.pr-1 { padding-right: 1rem }
+.pr-2 { padding-right: 2rem }
+.pr-3 { padding-right: 3rem }
+.pt-1 { padding-top: 1rem }
+.pt-2 { padding-top: 2rem }
+.pt-3 { padding-top: 3rem }
+.pb-1 { padding-bottom: 1rem }
+.pb-2 { padding-bottom: 2rem }
+.pb-3 { padding-bottom: 3rem }
+
+// Children padding
+.cp-05 > * { padding: 0.5rem }
+.cp-1 > * { padding: 1rem }
+.cp-2 > * { padding: 2rem }
+.cp-3 > * { padding: 3rem }
+.cpl-1 > * { padding-left: 1rem }
+.cpl-2 > * { padding-left: 2rem }
+.cpl-3 > * { padding-left: 3rem }
+.cpr-1 > * { padding-right: 1rem }
+.cpr-2 > * { padding-right: 2rem }
+.cpr-3 > * { padding-right: 3rem }
+.cpt-1 > * { padding-top: 1rem }
+.cpt-2 > * { padding-top: 2rem }
+.cpt-3 > * { padding-top: 3rem }
+.cpb-1 > * { padding-bottom: 1rem }
+.cpb-2 > * { padding-bottom: 2rem }
+.cpb-3 > * { padding-bottom: 3rem }
+
+// Margin
+.m-05 { margin: 0.5rem }
+.m-1 { margin: 1rem }
+.m-2 { margin: 2rem }
+.m-3 { margin: 3rem }.pl-1 { padding-left: 1rem }
+.ml-2 { margin-left: 2rem }
+.ml-3 { margin-left: 3rem }
+.mr-1 { margin-right: 1rem }
+.mr-2 { margin-right: 2rem }
+.mr-3 { margin-right: 3rem }
+.mt-1 { margin-top: 1rem }
+.mt-2 { margin-top: 2rem }
+.mt-3 { margin-top: 3rem }
+.mb-1 { margin-bottom: 1rem }
+.mb-2 { margin-bottom: 2rem }
+.mb-3 { margin-bottom: 3rem }
+
+// Children margin
+.cm-05 > * { margin: 0.5rem }
+.cm-1 > * { margin: 1rem }
+.cm-2 > * { margin: 2rem }
+.cm-3 > * { margin: 3rem }
+
+@include xl {
+    .xlp-0 { padding: 0; }
+    .xlm-0 { margin: 0; }
+    .xl-t-center { text-align: center; }
+    .xl-1 { grid-template-columns: repeat(1,1fr); }
+    .xl-2 { grid-template-columns: repeat(2,1fr); }
+    .xl-3 { grid-template-columns: repeat(3,1fr); }
+    .xl-4 { grid-template-columns: repeat(4,1fr); }
+    .xl-5 { grid-template-columns: repeat(5,1fr); }
+    .xl-6 { grid-template-columns: repeat(6,1fr); }
+    .xl-7 { grid-template-columns: repeat(7,1fr); }
+    .xl-8 { grid-template-columns: repeat(8,1fr); }
+    .xl-9 { grid-template-columns: repeat(9,1fr); }
+    .xl-10 { grid-template-columns: repeat(10,1fr); }
+    .xl-11 { grid-template-columns: repeat(11,1fr); }
+    .xl-12 { grid-template-columns: repeat(12,1fr); }
+    .container-xl { width: 70vw; max-width: 1200px; margin: auto; }
+}
+@include lg {
+    .lg-t-center { text-align: center; }
+    .lg-1 { grid-template-columns: repeat(1,1fr); }
+    .lg-2 { grid-template-columns: repeat(2,1fr); }
+    .lg-3 { grid-template-columns: repeat(3,1fr); }
+    .lg-4 { grid-template-columns: repeat(4,1fr); }
+    .lg-5 { grid-template-columns: repeat(5,1fr); }
+    .lg-6 { grid-template-columns: repeat(6,1fr); }
+    .lg-7 { grid-template-columns: repeat(7,1fr); }
+    .lg-8 { grid-template-columns: repeat(8,1fr); }
+    .lg-9 { grid-template-columns: repeat(9,1fr); }
+    .lg-10 { grid-template-columns: repeat(10,1fr); }
+    .lg-11 { grid-template-columns: repeat(11,1fr); }
+    .lg-12 { grid-template-columns: repeat(12,1fr); }
+    .container-lg { max-width: 80vw; margin: auto; }
+}
+@include md {
+    .md-t-center { text-align: center; }
+    .md-1 { grid-template-columns: repeat(1,1fr); }
+    .md-2 { grid-template-columns: repeat(2,1fr); }
+    .md-3 { grid-template-columns: repeat(3,1fr); }
+    .md-4 { grid-template-columns: repeat(4,1fr); }
+    .md-5 { grid-template-columns: repeat(5,1fr); }
+    .md-6 { grid-template-columns: repeat(6,1fr); }
+    .md-7 { grid-template-columns: repeat(7,1fr); }
+    .md-8 { grid-template-columns: repeat(8,1fr); }
+    .md-9 { grid-template-columns: repeat(9,1fr); }
+    .md-10 { grid-template-columns: repeat(10,1fr); }
+    .md-11 { grid-template-columns: repeat(11,1fr); }
+    .md-12 { grid-template-columns: repeat(12,1fr); }
+    .container-md { max-width: 80vw; margin: auto; }
+}
+@include sm {
+    .sm-t-center { text-align: center; }
+    .sm-1 { grid-template-columns: repeat(1,1fr); }
+    .sm-2 { grid-template-columns: repeat(2,1fr); }
+    .sm-3 { grid-template-columns: repeat(3,1fr); }
+    .sm-4 { grid-template-columns: repeat(4,1fr); }
+    .sm-5 { grid-template-columns: repeat(5,1fr); }
+    .sm-6 { grid-template-columns: repeat(6,1fr); }
+    .sm-7 { grid-template-columns: repeat(7,1fr); }
+    .sm-8 { grid-template-columns: repeat(8,1fr); }
+    .sm-9 { grid-template-columns: repeat(9,1fr); }
+    .sm-10 { grid-template-columns: repeat(10,1fr); }
+    .sm-11 { grid-template-columns: repeat(11,1fr); }
+    .sm-12 { grid-template-columns: repeat(12,1fr); }
+    .container-md { max-width: 80vw; margin: auto; }
+}

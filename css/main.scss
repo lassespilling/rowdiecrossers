@@ -1,0 +1,263 @@
+// Colourscheme
+$mountain-grey: rgb(42,41,38);
+$action-orange: #FF4800;
+$dirt: #F4E598;
+$light: #F2ECE3;
+
+// Modules
+@import "modules/fonts.scss";
+@import "modules/mixins.scss";
+@import "modules/grids.scss";
+
+// Typography
+$basic: "cooper hewitt";
+$stylish: "brush up too";
+
+// Partials
+@import "partials/_blocktags.scss";
+@import "partials/_header.scss";
+@import "partials/_animations.scss";
+
+// Breakpoints
+@include xl {}
+@include lg {}
+@include md {}
+@include sm {}
+
+.navmenu {
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    list-style: none;
+    width: 100vw;
+    display: grid;
+    perspective: 100vw;
+    font-family: $stylish;
+        &__logo { grid-area: logo; }
+        &__logo img { height: 6rem; }
+        &__about { grid-area: about; }
+        &__bikes { grid-area: bikes; }
+        &__contact { grid-area: contact;}
+    
+    grid-template-areas: "logo about bikes contact";
+        &__item:last-child {
+            padding-right: 2rem;
+        }
+        &__item {
+            text-decoration: none;
+            height: 6rem;
+            display: block;
+            line-height: 6rem;
+            padding: 1rem;
+            position: relative;
+            text-align: center;
+            @include transition(all .2s ease);
+            transform-origin: center;
+        }
+        &__item:hover {
+            font-family: $stylish;
+            letter-spacing: 0.1rem;
+            font-style: normal;
+        }
+        &__item:not(&__logo) img {
+            width: 2rem;
+            margin-right: 1rem;
+            margin-bottom: -0.2rem;
+        }
+        &__item:not(&__logo):hover span {
+            transform: scale(1.1);
+            display: inline-block;
+            transform-origin: center;
+            animation: buzz .5s ease infinite;
+        }
+        &__item:not(&__logo)::before {
+            content:"";
+            width: calc(184px/2);
+            height: calc(21px/2);
+            position: absolute;
+            top: 60%;
+            left: -5rem;
+            margin: auto;
+            display: block;
+            @include transition(all .2s ease);
+            opacity: 0;
+            pointer-events: none;
+        }
+        &__contact:not(&__logo)::before {
+            background: url("../img/rough-line-colored.svg") center center / cover no-repeat;
+        }
+        &__item:not(&__logo):hover:before {
+            opacity: 1;
+            left: 0;
+            right: 0;
+            transform-origin: center;
+            background-image: url("../img/rough-line-colored.svg");
+            animation: lineshakecolor .3s ease infinite;
+        }
+        &__logo {
+            position: relative;
+            z-index: 1;
+        }
+        &__logo img {
+            @include transition(all .1s ease);
+            transform-origin: top left;
+        }
+        &__logo:hover img {
+            transform: scale(1.2);
+            @include transition(all .1s ease);
+        }
+        &__logo span {
+            width: 100%;
+            height: 10rem;
+            transform: scale(0);
+            @include transition(all .2s ease);
+            left: 2vw;
+            top: 0;
+            position: absolute;
+            background: url("../img/logobg.svg") center center / contain no-repeat;
+            z-index: -1;
+        }
+        &__logo:hover span {
+            transform: scale(1);
+            @include transition(all .2s ease);
+            animation: buzz .3s ease infinite .2s;
+        }
+        
+        /* &__logo::before {
+            content:"";
+            width: 2000px;
+            height: 10rem;
+            position: absolute;
+            top: -1rem;
+            left: -2000px;
+            z-index: -2;
+            display: block;
+            background-position: 20% center;
+            background-size: 60%;
+            background-repeat: no-repeat;
+            background-image: url("../img/rough-line.svg");
+            @include transition(left .2s ease);
+            pointer-events: none;
+        }
+        &__logo:hover:before {
+            left: -1000px;
+            @include transition(left .2s ease);
+            animation: lineshake .1s ease infinite;
+        } */
+}
+.container {
+    margin: auto;
+    @include xl { max-width: 1200px; }
+    @include lg { max-width: 80vw; }
+    @include md { max-width: 80vw; }
+    @include sm {}
+}
+
+.stylish {
+    font-family: $stylish;
+    letter-spacing: 0.2rem;
+}
+
+.orange {
+    color: $action-orange;
+}
+.dirt {
+    color: $dirt;
+}
+.dirt, .logo {
+}
+.pattern {
+    background: url("../img/pattern.svg") center center / 100px repeat;
+}
+.dark {
+    background-color: rgba(0,0,0,0.5);
+}
+
+.t-center {
+    text-align: center;
+    padding: 2rem;
+}
+.t-shadow {
+    text-shadow: 0px 3px 0px $mountain-grey;
+}
+
+.responsive {
+    width: 100%;
+    height: 100%;
+}
+.hasimgbg {
+    z-index: 1;
+}
+.bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: block;
+}
+.dark-grad::before {
+    content:"";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0,0,0);
+    background: -moz-radial-gradient(circle, rgba(0,0,0,0.6068802521008403) 36%, rgba(0,0,0,0) 100%);
+    background: -webkit-radial-gradient(circle, rgba(0,0,0,0.6068802521008403) 36%, rgba(0,0,0,0) 100%);
+    background: radial-gradient(circle, rgba(0,0,0,0.6068802521008403) 36%, rgba(0,0,0,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+    z-index: -1;
+}
+.dirt .outline, .dirt.outline {
+    -webkit-text-stroke-color: $dirt;
+}
+.orange .outline, .orange.outline {
+    -webkit-text-stroke-color: $action-orange;
+}
+.outline {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $light;
+    color: black;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+.hoverpop:hover {
+    box-shadow: 0px 0px 15px $dirt;
+    z-index: 3;
+}
+.btn {
+    display: inline-block;
+    padding: 0.5rem 0.5rem;
+    color: black;
+    font-style: italic;
+    transform: skew(-15deg, 0) rotate(-5deg);
+    font-weight: bold;
+    letter-spacing: 0.03rem;
+    border-radius: 0.2rem;
+    text-decoration: none;
+    background: rgba(0,0,0,0.8);
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    color: $dirt;
+    border: 0.5px solid $dirt;
+    box-shadow: 3px 3px 0px $dirt;
+    @include transition(all .2s ease);
+}
+.btn::after {
+    content: " *";
+}
+.btn:hover {
+    animation: buzz .5s ease infinite;
+}
+.btn--orange {
+    color: $action-orange;
+    border: 1px solid $action-orange;
+    box-shadow: 3px 3px 0px $action-orange;
+}
+.btn--orange {
+    color: $dirt;
+    border: 1px solid $dirt;
+    box-shadow: 3px 3px 0px $dirt;
+}

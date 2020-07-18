@@ -1,0 +1,43 @@
+@keyframes buzz {
+  10%, 90% {
+    transform: scale(0.97);
+  }
+  20%, 80% {
+    transform: scale(1);
+  }
+  30%, 50%, 70% {
+    transform: scale(0.93);
+  }
+  40%, 60% {
+    transform: scale(1.03);
+  }
+}
+@keyframes lineshake {
+  10%, 90% {
+    transform: translate3d(-2px, 0, 3px)  rotate(0deg);
+  }
+  20%, 80% {
+    transform: translate3d(3px, 2px, 0) rotate(5deg);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-5px, 1px, 0) rotate(2deg);
+  }
+  40%, 60% {
+    transform: translate3d(5px, 0, 2px) rotate(1deg);
+  }
+}
+@keyframes lineshakecolor {
+  10%, 90% {
+    transform: translate3d(-2px, 0, 3px)  rotate(0deg);
+  }
+  20%, 80% {
+    transform: translate3d(3px, 2px, 0) rotate(5deg);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-5px, 1px, 0) rotate(2deg);
+  }
+  40%, 60% {
+    transform: translate3d(5px, 0, 2px) rotate(1deg);
+    background-image: url("../img/rough-line-colored-2.svg");
+  }
+}
